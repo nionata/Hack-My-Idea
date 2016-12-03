@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 #idea-box {
     background-color: slategray;
     width: 50%;
@@ -8,7 +12,6 @@
 #idea-holder {
     background-color: bisque;
     padding: 10px;
-    text-align: center;
 }
 
 #btn-connect {
@@ -17,4 +20,8 @@
 
 #btn-next {
     background-color: red;
+}
+
+#idea-create-box {
+    margin-top: 10px;
 }
