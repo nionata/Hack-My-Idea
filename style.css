@@ -1,0 +1,20 @@
+#idea-box {
+    background-color: slategray;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#idea-holder {
+    background-color: bisque;
+    padding: 10px;
+    text-align: center;
+}
+
+#btn-connect {
+    background-color: green;
+}
+
+#btn-next {
+    background-color: red;
+}
