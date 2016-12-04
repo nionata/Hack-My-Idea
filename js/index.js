@@ -17,8 +17,7 @@ $(document).ready(function() {
     });
 
     $("#submit").click(function() {
-        name = $("#name").value;
-        email = $("#email").value;
+        window.location.href = "index.html";
     });
 });
 
@@ -39,3 +38,19 @@ function newIdea(number) {
     });
 
 };
+
+function setNewIdea() {
+    console.log("asd");
+    var newName = 5;
+    var newEmail = 5;
+    var newIdea = 5;
+
+    $.getJSON("input.json", function(json) {
+        json[Object.keys(json).length]["name"] = newName;
+        json[Object.keys(json).length]["email"] = newEmail;
+        json[Object.keys(json).length]["idea"] = newIdea;
+        console.log(json[Object.keys(json).length]);
+    });
+
+
+}
