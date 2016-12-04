@@ -1,25 +1,29 @@
 body {
     text-align: center;
+    color: white;
 }
 
 #idea-box {
-    background-color: slategray;
+    background-color: #bdc3c7;
     width: 50%;
     margin: 0 auto;
+    padding: 10px;
+    margin-top: 10%;
+    color: white;
+}
+
+#img {
+    margin: px 0 px 0;
+    width: 25%;
+}
+
+#idea-words {
     padding: 10px;
 }
 
 #idea-holder {
-    background-color: bisque;
+    background-color: #34495e;
     padding: 10px;
-}
-
-#btn-connect {
-    background-color: green;
-}
-
-#btn-next {
-    background-color: red;
 }
 
 #idea-create-box {
