@@ -2,31 +2,31 @@
     "1": {
         "idea": "I want to make a controllable balloon",
         "name": "Nicholas Ionata",
-        "email": "nick.com"
+        "email": "nick@sample.com"
     },
     "2": {
         "idea": "CSGO website",
         "name": "Connor Dupuis",
-        "email": "connor.com"
+        "email": "connor@sample.com"
     },
     "3": {
         "idea": "I want to make a chat system",
         "name": "Zach",
-        "email": "zach@gmail.com"
+        "email": "zach@sample.com"
     },
     "4": {
         "idea": "A sound thingy",
         "name": "Amir",
-        "email": "amir@gmail.com"
+        "email": "amir@sample.com"
     },
     "5": {
         "idea": "Trojan horse",
         "name": "Josh",
-        "email": "joshgmail.com"
+        "email": "josh@sample.com"
     },
     "6": {
         "idea": "My first website",
         "name": "Jacob",
-        "email": "jacob@gmail.com"
+        "email": "jacob@sample.com"
     }
 }
