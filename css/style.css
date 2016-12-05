@@ -1,6 +1,9 @@
 body {
     text-align: center;
-    color: white;
+}
+
+h4 {
+    color: #34495e;
 }
 
 #idea-box {
