@@ -15,3 +15,5 @@ This web app allows you to form a great team at a hackathon based on an idea you
 #### Adding an idea
 1. Go to: https://nionata.github.io/Hack-My-Idea/
 2. FEATURE STILL IN PROGRESS
+
+Made @ Local Hack Day 2016 East Lake High School
