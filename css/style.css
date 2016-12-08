@@ -9,10 +9,12 @@ body {
     background: url("../images/Grid.png") repeat;
     margin: 0px;
     padding: 0px;
+    color: white;
 }
 
 h4 {
-    color: red;
+    position: relative;
+    top: 27%;
 }
 
 #idea-box {
@@ -20,7 +22,6 @@ h4 {
     width: 50%;
     margin: 0 auto;
     padding: 10px;
-    color: white;
     position: relative;
     top: 25%;
 }
