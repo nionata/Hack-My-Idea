@@ -21,23 +21,44 @@ $(document).ready(function() {
         var enteredName = $("#name").val();
         var newEmail = $("#email").val();
         var newIdea = $("#idea").val();
+        var uId = randomNumer();
+        var db = firebase.database().ref("/ideas/");
 
-        if(enteredName == "" || newEmail == "" || newIdea == "") {
+        if(db.equalTo("skipper")) {
             alert("Please try again");
             return;
-        }
+        };
 
-        //var uId = Math.random() * 100;
 
-        var db = firebase.database().ref("/ideas/nionata/");
-        db.child("name").set(enteredName);
-        db.child("email").set(newEmail);
-        db.child("idea").set(newIdea);
 
-        window.location.replace("/index.html");
+        db.child(uId + "/").set({
+            name: enteredName,
+            email: newEmail,
+            idea: newIdea
+        });
+
+        alert("Thank you, your idea is being added!");
+
+        setTimeout(function() {
+            window.location.replace("/index.html");
+        }, 1000);
     });
 
 });
+
+function checkIfUserExists(userId) {
+  var usersRef = new Firebase(USERS_LOCATION);
+  usersRef.child(userId).once('value', function(snapshot) {
+    var exists = (snapshot.val() !== null);
+    userExistsCallback(userId, exists);
+  });
+}
+
+function randomNumer() {
+    var max = 9999;
+    var min = 1000;
+    return Math.floor((Math.random() * (max - min) + min));
+};
 
 function newIdea(number) {
     $.getJSON("input.json", function(json) {
