@@ -24,13 +24,6 @@ $(document).ready(function() {
         var uId = randomNumer();
         var db = firebase.database().ref("/ideas/");
 
-        if(db.equalTo("skipper")) {
-            alert("Please try again");
-            return;
-        };
-
-
-
         db.child(uId + "/").set({
             name: enteredName,
             email: newEmail,
@@ -45,14 +38,6 @@ $(document).ready(function() {
     });
 
 });
-
-function checkIfUserExists(userId) {
-  var usersRef = new Firebase(USERS_LOCATION);
-  usersRef.child(userId).once('value', function(snapshot) {
-    var exists = (snapshot.val() !== null);
-    userExistsCallback(userId, exists);
-  });
-}
 
 function randomNumer() {
     var max = 9999;
