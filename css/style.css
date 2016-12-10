@@ -41,5 +41,6 @@ h4 {
 }
 
 #idea-create-box {
-    margin-top: 10px;
+    position: relative;
+    top: 27%;
 }
