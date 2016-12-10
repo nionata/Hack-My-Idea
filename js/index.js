@@ -17,8 +17,21 @@ $(document).ready(function() {
     });
 
     $("#submit").click(function() {
-        window.location.href = "index.html";
+        var enteredName = $("#name").val();
+        var newEmail = $("#email").val();
+        var newIdea = $("#idea").val();
+
+        if(enteredName == "" || newEmail == "" || newIdea == "") {
+            alert("Please try again");
+            return;
+        }
+
+        var db = firebase.database().ref("/users/" + enteredName + "/");
+        db.child("email").set(newEmail);
+        db.child("idea").set(newIdea);
+
     });
+
 });
 
 function newIdea(number) {
@@ -40,17 +53,6 @@ function newIdea(number) {
 };
 
 function setNewIdea() {
-    console.log("asd");
-    var newName = 5;
-    var newEmail = 5;
-    var newIdea = 5;
-
-    $.getJSON("input.json", function(json) {
-        json[Object.keys(json).length]["name"] = newName;
-        json[Object.keys(json).length]["email"] = newEmail;
-        json[Object.keys(json).length]["idea"] = newIdea;
-        console.log(json[Object.keys(json).length]);
-    });
 
 
 }
