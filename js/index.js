@@ -16,7 +16,8 @@ $(document).ready(function() {
        newIdea(currentIdea);
     });
 
-    $("#submit").click(function() {
+    $("#form").on("submit", function() {
+
         var enteredName = $("#name").val();
         var newEmail = $("#email").val();
         var newIdea = $("#idea").val();
@@ -26,10 +27,14 @@ $(document).ready(function() {
             return;
         }
 
-        var db = firebase.database().ref("/users/" + enteredName + "/");
+        //var uId = Math.random() * 100;
+
+        var db = firebase.database().ref("/ideas/nionata/");
+        db.child("name").set(enteredName);
         db.child("email").set(newEmail);
         db.child("idea").set(newIdea);
 
+        window.location.replace("/index.html");
     });
 
 });
@@ -51,8 +56,3 @@ function newIdea(number) {
     });
 
 };
-
-function setNewIdea() {
-
-
-}
