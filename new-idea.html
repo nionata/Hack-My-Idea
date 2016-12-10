@@ -5,25 +5,37 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-        <script src="js/index.js"></script>
     </head>
     <body>
         <h1>Add your idea to the list</h1>
         <div id="idea-box">
             <div id="idea-holder">
-                <form type="text" name="new-idea" action="JavaScript:setNewIdea()">
+                <form id="form" method="post" onsubmit="return false">
                     Name<br/>
-                    <input type="text" id="name"><br/>
+                    <input type="text" id="name" placeholder="Full Name" required><br/>
                     Email<br/>
-                    <input type="email" id="email"><br/>
+                    <input type="email" id="email" placeholder="Email" required><br/>
                     Idea<br/>
-                    <input type="text" id="idea"><br/>
-                    <input type="submit" id="submit" >
+                    <input type="text" id="idea" placeholder="Tell us your idea" required><br/>
+                    <input type="submit" id="submit" value="Submit!">
                 </form>
             </div>
         </div>
         <div id="idea-create-box">
             <a href="/index.html"><button class="btn btn-primary">Home</button></a>
         </div>
+        <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCAMo7FqiwOyZOT_gBhZI7ZHIf2jCiAtXQ",
+                authDomain: "hackmyidea.firebaseapp.com",
+                databaseURL: "https://hackmyidea.firebaseio.com",
+                storageBucket: "hackmyidea.appspot.com",
+                messagingSenderId: "875142950136"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="js/index.js"></script>
     </body>
 </html>
