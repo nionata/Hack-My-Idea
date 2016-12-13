@@ -16,10 +16,6 @@ $(document).ready(function() {
        newIdea(currentIdea);
     });
 
-    const ideasRef = firebase.database().ref("/ideas/");
-
-    ideasRef.on("value", snap => console.log(snap.val()));
-
     $("#form").on("submit", function() {
 
         var enteredName = $("#name").val();
