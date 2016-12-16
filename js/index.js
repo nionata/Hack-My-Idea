@@ -2,7 +2,6 @@ var name;
 var email;
 var idea;
 var currentIdea = 1;
-var ideaList;
 
 $(document).ready(function() {
     newIdea(currentIdea);
@@ -16,26 +15,6 @@ $(document).ready(function() {
     $("#btn-next").click(function() {
        newIdea(currentIdea);
     });
-
-
-    const ideasRef = firebase.database().ref("/ideas/").child("5945/name");
-
-
-
-    ideasRef.on("value", snap => {
-        console.log(snap.val());
-        /*ideaList = JSON.stringify(snap.val());
-        console.log(JSON.stringify(snap.val(), null, 3));*/
-    });
-
-    //var test = JSON.parse(ideaList);
-    //alert(test["5945"]["name"]);
-
-    console.log(ideaList);
-    var keys = [];
-    for(var k in ideaList) keys.push(k);
-
-    console.log(keys);
 
     $("#form").on("submit", function() {
 
