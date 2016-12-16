@@ -1,8 +1,9 @@
 var name;
 var email;
 var idea;
-var currentIdea = 1;
+var currentIdea = 0;
 var ideaList;
+var keys = [];
 
 $(document).ready(function() {
     newIdea(currentIdea);
@@ -17,32 +18,18 @@ $(document).ready(function() {
        newIdea(currentIdea);
     });
 
+    var db = firebase.database().ref("/ideas/");
 
-    const ideasRef = firebase.database().ref("/ideas/").child("5945/name");
-
-
-
-    ideasRef.on("value", snap => {
-        console.log(snap.val());
-        /*ideaList = JSON.stringify(snap.val());
-        console.log(JSON.stringify(snap.val(), null, 3));*/
+    db.on("value", function(snap) {
+        snap.forEach(function(childSnap) {
+            keys.push(childSnap.key);
+        });
     });
 
-    //var test = JSON.parse(ideaList);
-    //alert(test["5945"]["name"]);
-
-    console.log(ideaList);
-    var keys = [];
-    for(var k in ideaList) keys.push(k);
-
-    console.log(keys);
-
     $("#form").on("submit", function() {
-
         var enteredName = $("#name").val();
         var newEmail = $("#email").val();
         var newIdea = $("#idea").val();
-        var db = firebase.database().ref("/ideas/");
 
         db.push({
             name: enteredName,
@@ -56,18 +43,31 @@ $(document).ready(function() {
 });
 
 function newIdea(number) {
-    $.getJSON("input.json", function(json) {
-        $("#pair-name").text("");
-        $("#pair-email").text("");
-        name = json[number]["name"];
-        email = json[number]["email"];
-        idea = json[number]["idea"]
-        $("#idea").text(idea);
+    var db = firebase.database().ref("/ideas/");
+    //Child reference to the specific idea
+    var newIdeaRef = db.child("-KZ81Y2eSVpHV4A-jcof" + "/");
 
-        if(currentIdea == Object.keys(json).length) {
-            currentIdea = 1;
-        } else {
-            currentIdea++;
-        }
+    console.log(keys);
+    console.log(keys[number]);
+
+    //Clear out the contact info if that is displayed from the previous idea
+    $("#pair-name").text("");
+    $("#pair-email").text("");
+
+    //Set our global variables equal to the current idea
+    newIdeaRef.once("value", function(snap) {
+        name = snap.val().name;
+        email = snap.val().email;
+        idea = snap.val().idea;
     });
+
+    //Set new idea
+    $("#idea").text(idea);
+
+    //Reset currentIdea making sure it doesn't excede the keys
+    if(currentIdea < keys.length - 1) {
+        currentIdea++;
+    } else {
+        currentIdea = 0;
+    }
 };
