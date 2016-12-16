@@ -45,17 +45,14 @@ $(document).ready(function() {
         var uId = randomNumer();
         var db = firebase.database().ref("/ideas/");
 
-        db.child(uId + "/").set({
+        db.push({
             name: enteredName,
             email: newEmail,
             idea: newIdea
-        });
-
-        alert("Thank you, your idea is being added!");
-
-        setTimeout(function() {
+        }).then(function() {
+            alert("Thank you, your idea is being added!");
             window.location.replace("/index.html");
-        }, 1000);
+        });
     });
 });
 
