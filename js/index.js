@@ -45,6 +45,12 @@ $(document).ready(function() {
 
 function newIdea(number) {
     var db = firebase.database().ref("/ideas/");
+
+    if(keys.length == 0) {
+        $("#idea").text("Add your idea now!");
+        return;
+    };
+
     //Child reference to the specific idea
     var newIdeaRef = db.child(keys[number] + "/");
 
