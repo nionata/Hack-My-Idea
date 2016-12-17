@@ -1,29 +1,26 @@
 body {
-    text-align: center;
     margin: 0px;
     padding: 0px;
-}
-
-#main {
-    height: 100vh;
-    background: url("../images/Grid.png") repeat;
-    margin: 0px;
-    padding: 0px;
-    color: white;
-}
-
-h4 {
-    position: relative;
-    top: 27%;
 }
 
 #idea-box {
-    background-color: #bdc3c7;
-    width: 50%;
+    /*background-color: #bdc3c7;*/
+    background: url("../images/Grid.png");
+    width: 100%;
     margin: 0 auto;
+    height: 100vh;
+    color: white;
+    text-align: right;
+}
+
+#new-btn {
+    margin-top: 10px;
+}
+
+#idea-holder {
+    background-color: #34495e;
     padding: 10px;
-    position: relative;
-    top: 25%;
+    text-align: center;
 }
 
 #img {
@@ -35,12 +32,3 @@ h4 {
     padding: 10px;
 }
 
-#idea-holder {
-    background-color: #34495e;
-    padding: 10px;
-}
-
-#idea-create-box {
-    position: relative;
-    top: 27%;
-}
