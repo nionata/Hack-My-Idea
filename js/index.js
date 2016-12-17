@@ -44,19 +44,20 @@ $(document).ready(function() {
 });
 
 function newIdea(number) {
-    var db = firebase.database().ref("/ideas/");
+
+    //Clear out the contact info if that is displayed from the previous idea
+    $("#pair-name").text("");
+    $("#pair-email").text("");
 
     if(keys.length == 0) {
         $("#idea").text("Add your idea now!");
         return;
     };
 
+    var db = firebase.database().ref("/ideas/");
+
     //Child reference to the specific idea
     var newIdeaRef = db.child(keys[number] + "/");
-
-    //Clear out the contact info if that is displayed from the previous idea
-    $("#pair-name").text("");
-    $("#pair-email").text("");
 
     //Set our global variables equal to the current idea
     newIdeaRef.once("value", function(snap) {
