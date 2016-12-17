@@ -1,0 +1,36 @@
+html {
+    background: url("../images/Grid.png");
+}
+
+#main {
+    background-color: #34495e;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+#img {
+    width: 25%;
+}
+
+#home-btn {
+    margin: 10px;
+}
+
+.form-input {
+    padding: 20px;
+    width: 85%;
+    margin: 10px;
+    color: black;
+    font-size: 150%;
+    border: none;
+}
+
+#submit {
+    background-color: white;
+}
+
+#submit:hover {
+    background-color: #2980b9;
+    color: white;
+}
