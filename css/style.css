@@ -10,6 +10,7 @@ body {
     height: 100vh;
     color: white;
     text-align: right;
+    padding: 0px;
 }
 
 #new-btn {
