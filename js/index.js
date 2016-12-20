@@ -18,9 +18,10 @@ $(document).ready(function() {
     });
 
     $("#btn-connect").click(function() {
-        $("#idea").text("");
-        $("#pair-name").text(name);
-        $("#pair-email").text(email);
+        $("#idea").fadeOut(function() {
+            $("#pair-name").text(name).fadeIn();
+            $("#pair-email").text(email).fadeIn();
+        });
     });
 
     $("#btn-next").click(function() {
@@ -46,8 +47,8 @@ $(document).ready(function() {
 function newIdea(number) {
 
     //Clear out the contact info if that is displayed from the previous idea
-    $("#pair-name").text("");
-    $("#pair-email").text("");
+    $("#pair-name").text("").fadeOut();
+    $("#pair-email").text("").fadeOut();
 
     if(keys.length == 0) {
         $("#idea").text("Add your idea now!");
@@ -65,7 +66,9 @@ function newIdea(number) {
         email = snap.val().email;
         idea = snap.val().idea;
     }).then(function() {
-        $("#idea").text(idea);
+        $("#idea").fadeOut(function() {
+            $(this).text(idea).fadeIn();
+        });
     });
 
     //Reset currentIdea making sure it doesn't excede the keys
