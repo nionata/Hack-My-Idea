@@ -1,12 +1,13 @@
-html {
+body, html {
     background: url("../images/Grid.png");
 }
 
 #main {
-    background-color: #34495e;
+    background-color: rgba(52, 73, 94, .9);
     text-align: center;
     color: white;
     padding: 10px;
+    height: 100%;
 }
 
 #img {

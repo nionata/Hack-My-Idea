@@ -18,9 +18,10 @@ body {
 }
 
 #idea-holder {
-    background-color: #34495e;
+    background-color: rgba(52, 73, 94, .9);
     padding: 10px;
     text-align: center;
+    height: 100vh;
 }
 
 #img {
